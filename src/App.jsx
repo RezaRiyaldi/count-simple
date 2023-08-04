@@ -1,7 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Users from './pages/Users';
-import UserDetail from './pages/UserDetail';
+import {Home, Users, UserDetail} from './pages';
 
 export default function App() {
   return (

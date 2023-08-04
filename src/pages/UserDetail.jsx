@@ -39,7 +39,7 @@ export default function UserDetail() {
             </Link>
          </div>
          {
-            user.company != undefined ?
+            user.name ?
                <>
                   <div className='bg-slate-700 text-white p-2 border rounded'>
                      <h1 className='text-2xl flex gap-2'><IconUser className='my-auto' />{user.name} - ({user.username})</h1>
@@ -48,8 +48,8 @@ export default function UserDetail() {
                      <p className='flex gap-1 mb-2'><IconPhone /> Phone: {user.phone}</p>
                      <p className='flex gap-1 mb-2'><IconMail /> Email: {user.email}</p>
                      <p className='flex gap-1 mb-2'><IconWorldWww /> Website: {user.website}</p>
-                     <p className='flex gap-1 mb-2'><IconBuildingSkyscraper /> Company: {user.company.name}</p>
-                     <p className='flex gap-1 mb-2'><IconBrandGoogleMaps /> Address: {user.address.street} {user.address.suite}, {user.address.city} - {user.address.zipcode}</p>
+                     <p className='flex gap-1 mb-2'><IconBuildingSkyscraper /> Company: {user.company?.name}</p>
+                     <p className='flex gap-1 mb-2'><IconBrandGoogleMaps /> Address: {user.address?.street} {user.address?.suite}, {user.address?.city} - {user.address?.zipcode}</p>
                   </div>
                </>
                : "Loading"}
