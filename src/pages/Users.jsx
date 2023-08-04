@@ -37,7 +37,7 @@ export default function Users() {
                   </li>
                ))}
             </ul>
-            : 'Data Tidak ada'}
+            : 'Loading ceritanya'}
       </div>
    );
 }

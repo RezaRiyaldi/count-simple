@@ -19,15 +19,15 @@ export default function UserDetail() {
          async function getUserDetail(id) {
             const { data } = await axios(`https://jsonplaceholder.typicode.com/users/${id}`);
             setUser(data);
-            console.log(data);
          }
 
          getUserDetail(id)
       } catch (error) {
-         console.log(error)
+         console.log('Something went wrong cok')
       }
 
    }, []);
+
    return (
       <div className='mx-3'>
          <div className='flex justify-between'>
@@ -38,20 +38,21 @@ export default function UserDetail() {
                <IconHome /> Home
             </Link>
          </div>
-         {user ?
-            <>
-               <div className='bg-slate-700 text-white p-2 border rounded'>
-                  <h1 className='text-2xl flex gap-2'><IconUser className='my-auto' />{user.name} - ({user.username})</h1>
-               </div>
-               <div className='bg-slate-700 text-white p-2 border rounded mt-2'>
-                  <p className='flex gap-1 mb-2'><IconPhone /> Phone: {user.phone}</p>
-                  <p className='flex gap-1 mb-2'><IconMail /> Email: {user.email}</p>
-                  <p className='flex gap-1 mb-2'><IconWorldWww /> Website: {user.website}</p>
-                  {/* <p className='flex gap-1 mb-2'><IconBuildingSkyscraper /> Company: {user.company.name}</p> */}
-                  {/* <p className='flex gap-1 mb-2'><IconBrandGoogleMaps /> Address: {user.address.street} {user.address.suite}, {user.address.city} - {user.address.zipcode}</p> */}
-               </div>
-            </>
-            : "loading"}
+         {
+            user.company != undefined ?
+               <>
+                  <div className='bg-slate-700 text-white p-2 border rounded'>
+                     <h1 className='text-2xl flex gap-2'><IconUser className='my-auto' />{user.name} - ({user.username})</h1>
+                  </div>
+                  <div className='bg-slate-700 text-white p-2 border rounded mt-2'>
+                     <p className='flex gap-1 mb-2'><IconPhone /> Phone: {user.phone}</p>
+                     <p className='flex gap-1 mb-2'><IconMail /> Email: {user.email}</p>
+                     <p className='flex gap-1 mb-2'><IconWorldWww /> Website: {user.website}</p>
+                     <p className='flex gap-1 mb-2'><IconBuildingSkyscraper /> Company: {user.company.name}</p>
+                     <p className='flex gap-1 mb-2'><IconBrandGoogleMaps /> Address: {user.address.street} {user.address.suite}, {user.address.city} - {user.address.zipcode}</p>
+                  </div>
+               </>
+               : "Loading"}
       </div>
    );
 }
