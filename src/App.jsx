@@ -4,7 +4,7 @@ import Counter from './components/Counter';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-800 grid place-content-center text-center">
+    <div className="min-h-screen bg-gradient-to-br from-slate-800 to-sky-800 grid place-content-center text-center">
       <div className='border p-14 rounded-2xl bg-slate-700'>
         <div className='relative flex h-32 w-32 mx-auto'>
           <IconAlertOctagon id='ping' className='text-yellow-300 m-auto mb-4 animate-ping absolute inline-flex h-full w-full opacity-30' />
