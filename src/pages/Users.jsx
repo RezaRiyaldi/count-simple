@@ -22,7 +22,7 @@ export default function Users() {
          {users.length ?
             <ul className='text-left text-slate-200'>
                {users.map((user) => (
-                  <li key={user.id} className='bg-slate-700 border p-2 rounded mb-2 hover:scale-105 transition-all hover:bg-slate-600 hover:border-0'>
+                  <li key={user.id} className='bg-slate-700 border p-2 rounded mb-2 hover:scale-105 transition-all hover:bg-slate-600 hover:border-emerald-300'>
                      <h1 className='text-2xl border-b-2 mb-3 inline-flex gap-1 pb-1'><IconUser className='my-auto' />{user.name} - ({user.username})</h1>
                      <p className='flex gap-1 mb-2'><IconPhone /> Phone: {user.phone}</p>
                      <p className='flex gap-1 mb-2'><IconMail /> Email: {user.email}</p>
