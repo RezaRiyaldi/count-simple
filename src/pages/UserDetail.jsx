@@ -10,18 +10,22 @@ import { IconBuildingSkyscraper } from '@tabler/icons-react';
 import { IconBrandGoogleMaps } from '@tabler/icons-react';
 import { IconHome } from '@tabler/icons-react';
 
-export default function UserDetail(props) {
+export default function UserDetail() {
    const [user, setUser] = useState([]);
    const { id } = useParams();
 
    useEffect(() => {
-      async function getUserDetail(idUser) {
-         const { data } = await axios(`https://jsonplaceholder.typicode.com/users/${idUser}`);
-         setUser(data);
-         console.log(data)
-      }
+      try {
+         async function getUserDetail(id) {
+            const { data } = await axios(`https://jsonplaceholder.typicode.com/users/${id}`);
+            setUser(data);
+            console.log(data);
+         }
 
-      getUserDetail(id)
+         getUserDetail(id)
+      } catch (error) {
+         console.log(error)
+      }
 
    }, []);
    return (
@@ -43,8 +47,8 @@ export default function UserDetail(props) {
                   <p className='flex gap-1 mb-2'><IconPhone /> Phone: {user.phone}</p>
                   <p className='flex gap-1 mb-2'><IconMail /> Email: {user.email}</p>
                   <p className='flex gap-1 mb-2'><IconWorldWww /> Website: {user.website}</p>
-                  <p className='flex gap-1 mb-2'><IconBuildingSkyscraper /> Company: {user.company['name']}</p>
-                  <p className='flex gap-1 mb-2'><IconBrandGoogleMaps /> Address: {user.address['street']} {user.address['suite']}, {user.address['city']} - {user.address['zipcode']}</p>
+                  {/* <p className='flex gap-1 mb-2'><IconBuildingSkyscraper /> Company: {user.company.name}</p> */}
+                  {/* <p className='flex gap-1 mb-2'><IconBrandGoogleMaps /> Address: {user.address.street} {user.address.suite}, {user.address.city} - {user.address.zipcode}</p> */}
                </div>
             </>
             : "loading"}
