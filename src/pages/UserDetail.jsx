@@ -8,6 +8,7 @@ import { IconMail } from '@tabler/icons-react';
 import { IconWorldWww } from '@tabler/icons-react';
 import { IconBuildingSkyscraper } from '@tabler/icons-react';
 import { IconBrandGoogleMaps } from '@tabler/icons-react';
+import { IconHome } from '@tabler/icons-react';
 
 export default function UserDetail(props) {
    const [user, setUser] = useState([]);
@@ -25,9 +26,14 @@ export default function UserDetail(props) {
    }, []);
    return (
       <div className='mx-3'>
-         <Link to={'/users'} className='flex gap-2 mb-1 text-white hover:bg-white/25 rounded w-20 p-2 justify-start'>
-            <IconArrowBackUp /> Back
-         </Link>
+         <div className='flex justify-between'>
+            <Link to={'/users'} className='flex gap-2 mb-1 text-white hover:bg-white/25 rounded w-20 p-2 justify-start'>
+               <IconArrowBackUp /> Back
+            </Link>
+            <Link to={'/'} className='flex gap-2 mb-1 text-white hover:bg-white/25 rounded w-20 p-2 justify-start'>
+               <IconHome /> Home
+            </Link>
+         </div>
          {user ?
             <>
                <div className='bg-slate-700 text-white p-2 border rounded'>
@@ -37,8 +43,8 @@ export default function UserDetail(props) {
                   <p className='flex gap-1 mb-2'><IconPhone /> Phone: {user.phone}</p>
                   <p className='flex gap-1 mb-2'><IconMail /> Email: {user.email}</p>
                   <p className='flex gap-1 mb-2'><IconWorldWww /> Website: {user.website}</p>
-                  {/* <p className='flex gap-1 mb-2'><IconBuildingSkyscraper /> Company: {user.company.name}</p> */}
-                  {/* <p className='flex gap-1 mb-2'><IconBrandGoogleMaps /> Address: {user.address.street} {user.address.suite}, {user.address.city} - {user.address.zipcode}</p> */}
+                  <p className='flex gap-1 mb-2'><IconBuildingSkyscraper /> Company: {user.company.name}</p>
+                  <p className='flex gap-1 mb-2'><IconBrandGoogleMaps /> Address: {user.address.street} {user.address.suite}, {user.address.city} - {user.address.zipcode}</p>
                </div>
             </>
             : "loading"}
