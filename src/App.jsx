@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Users from './pages/Users';
+import UserDetail from './pages/UserDetail';
 
 export default function App() {
   return (
@@ -8,7 +9,8 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' exact Component={Home} />
-          <Route path='/users' Component={Users} />
+          <Route path='/users' exact Component={Users} />
+          <Route path='/users/:id' Component={UserDetail} />
         </Routes>
       </BrowserRouter>
     </div>
