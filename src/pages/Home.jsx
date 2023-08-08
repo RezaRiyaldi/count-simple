@@ -22,7 +22,7 @@ export default function Home() {
                   <IconBrandGithub />
                   Login
                </Button>
-               <Button className={'bg-gradient-to-br from-blue-600 from-10% via-sky-500 via-30% to-emerald-400 to-90% hover:from-emerald-400 hover:from-10% hover:via-sky-500 hover:via-70% hover:to-blue-600 hover:to-90% animate-bounce'}>
+               <Button className={'bg-gradient-to-br from-blue-600 from-10% via-sky-500 via-30% to-emerald-400 to-90% hover:from-emerald-400 hover:from-10% hover:via-sky-500 hover:via-70% hover:to-blue-600 hover:to-90% animate-bounce transition-all duration-500'}>
                   <IconBrandGoogle />
                   Login
                </Button>
